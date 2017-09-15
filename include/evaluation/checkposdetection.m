@@ -1,0 +1,40 @@
+function [checkpositvefacedetection,pathh] = checkposdetection(p,option)
+fm = option.format;
+size = option.size;
+class=0;
+local = cd;
+
+while iscell(p)
+p = p{1};
+end
+cd(p);
+x=[];
+y=[];
+z=[];
+zt={};
+list = p;    
+    
+    %%%%load all the path in p
+    [list0,lm] = loadLocalDir();
+    list = [list; list0];
+    %%%move to next depth%%%  
+    if ~isempty(list0)
+        for i=1:lm
+            pa = char(list0{i});
+            cd(pa);
+            [list1,Lm] = loadLocalDir();
+            list = [list; list1];
+        end
+    end
+fprintf('\n Loading image 10 percent for ...\n');
+for i=1:length(list)
+[x,y,class,z,zt]=loadImgFromPath(x,y,char(list{i}),class,fm,size,3,z,zt);
+if mod(i,ceil(length(list)/10))==0
+    fprintf('...');
+end
+cd(local);
+end
+checkpositvefacedetection=z;
+pathh=zt;
+fprintf('finished loading!!\n');
+end
