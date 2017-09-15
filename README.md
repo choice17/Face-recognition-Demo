@@ -1,8 +1,11 @@
 # Face recognition
-Author: Takchoi Yu            4/18/17
-tcyu@umich.edu
+
+Contact: tcyu@umich.edu
+
 MATLAB @R2016b or later vesion
+
 using camera as input 
+
 using PCA feature extraction and Extend Yale Face, rbg-SVM
 
 --------------------------------------------------------------------------
