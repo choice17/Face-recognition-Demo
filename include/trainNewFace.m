@@ -16,7 +16,7 @@ if nargin==0
     operation=0;
 end
 if operation ==0
-    training = inputdlg('input num of new face','training',1);
+    training = inputdlg('input num of new people for registration','training',1);
     training = str2double(training{1});
     for i=1:training
         [list] = saveNewface();

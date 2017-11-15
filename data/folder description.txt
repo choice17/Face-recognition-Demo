@@ -1,0 +1,11 @@
+Face-recongition-Demo
+---------------------
+/data folder description
+------------------------
+
+In this folder,
+please place 
+1. predictMdl.mat  - prediction model or train new model by choosing option 1 
+2. YaleFaceCrop.mat - Compressed Yale data base (Cropped Face) : needed for training option
+
+please contact tcyu@umich.edu for .mat file delivery 
